@@ -445,4 +445,71 @@ p { font-size: 18px; }
     .hero .subline { font-size: 20px; }
     .journey-cards { grid-template-columns: 1fr; }
 }
+/* --- NEU: Opt-In Formular für Checkliste --- */
+.optin-form {
+    background: var(--color-bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    border: 2px dashed var(--color-secondary);
+}
+.optin-form p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-top: 0;
+}
+.optin-form input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Wichtig für 100% Breite */
+    font-family: 'Montserrat', sans-serif;
+}
+.optin-form .cta-button {
+    width: 100%; /* Button soll volle Breite haben */
+    padding: 18px 30px;
+    cursor: pointer;
+}
+.optin-form .privacy-note {
+    font-size: 14px;
+    color: #777;
+    margin-top: 15px;
+}
 
+/* --- NEU: "Was du lernst" Sektion --- */
+.what-you-learn {
+    background-color: var(--color-bg-light);
+}
+.learn-list {
+    list-style: none;
+    padding: 0;
+    margin: 40px auto;
+    display: inline-block;
+    text-align: left;
+    max-width: 500px;
+}
+.learn-list li {
+    font-size: 18px;
+    padding: 12px 0;
+    padding-left: 35px;
+    position: relative;
+}
+.learn-list li::before {
+    content: "💡"; /* Passendes Emoji */
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-size: 20px;
+}
+
+/* --- KORREKTUR für deine Problem-Liste --- */
+/* Dein altes CSS nutzt "✅" für Probleme, was verwirrt. */
+/* Ich überschreibe das hier mit einem passenderen Icon. */
+.problem-list li::before {
+    content: "😩"; 
+}
