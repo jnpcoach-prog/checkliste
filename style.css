@@ -78,8 +78,11 @@ p { font-size: 18px; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 .hero h1 {
-    color: var(--color-text);
-    text-align: left;
+    color: var(--color-primary); /* Deine Hauptfarbe */
+    font-size: 48px; /* Oder eine Größe, die Dir gefällt */
+    font-weight: 700; /* Sicherstellen, dass es fett ist */
+    /* Optional: Mehr Abstand nach unten, falls nötig */
+    margin-bottom: 20px; 
 }
 .hero .subline {
     font-size: 22px;
