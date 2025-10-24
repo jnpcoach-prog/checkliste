@@ -7,127 +7,11 @@
     
     <meta name="description" content="Hol Dir die kostenlose Checkliste für hormon-ausgleichende Superfoods und lerne, was Dein Körper in den Wechseljahren wirklich braucht.">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://sos-bauchfett-bundle.jnp-coach.com/style.css" />
+    <link rel="icon" href="https://sos-bauchfett-bundle.jnp-coach.com/favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
-    <link rel="stylesheet" href="style.css" />
-
-    <style>
-        /* --- NEU: Opt-In Formular für Checkliste --- */
-        .optin-form {
-            background: var(--color-bg-light);
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: center;
-            border: 2px dashed var(--color-secondary);
-        }
-        .optin-form .form-title { /* Neuer Stil für den Titel im Formular */
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--color-primary);
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        .optin-form input[type="email"] {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-            box-sizing: border-box; /* Wichtig für 100% Breite */
-            font-family: 'Montserrat', sans-serif;
-        }
-        .optin-form .cta-button {
-            width: 100%; /* Button soll volle Breite haben */
-            padding: 18px 30px;
-            cursor: pointer;
-        }
-        .optin-form .privacy-note {
-            font-size: 14px;
-            color: #777;
-            margin-top: 15px;
-        }
-        /* NEU: Checkbox für DSGVO */
-        .optin-form .checkbox-container {
-            margin-top: 15px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-size: 14px;
-            color: #555;
-            display: flex;
-            align-items: flex-start; /* Stellt sicher, dass Box und Text oben beginnen */
-        }
-        .optin-form .checkbox-container input[type="checkbox"] {
-            margin-right: 10px;
-            margin-top: 3px; /* Kleine Anpassung für bessere Ausrichtung */
-            flex-shrink: 0; /* Verhindert Schrumpfen der Checkbox */
-        }
-        .optin-form .checkbox-container label {
-             line-height: 1.5;
-        }
-
-
-        /* --- NEU: "Was du lernst" Sektion --- */
-        .what-you-learn {
-            background-color: var(--color-bg-light);
-        }
-        .learn-list {
-            list-style: none;
-            padding: 0;
-            margin: 40px auto;
-            display: inline-block;
-            text-align: left;
-            max-width: 600px;
-        }
-        .learn-list li {
-            font-size: 18px;
-            padding: 12px 0;
-            padding-left: 35px;
-            position: relative;
-        }
-        .learn-list li::before {
-            content: "💡"; /* Passendes Emoji */
-            position: absolute;
-            left: 0;
-            top: 13px;
-            font-size: 20px;
-        }
-        /* Anpassung für Pfeile in der "Lösungs"-Sektion */
-        .solution-list {
-             list-style: none;
-             padding: 0;
-             margin: 30px auto;
-             max-width: 600px;
-             text-align: left;
-        }
-        .solution-list li {
-            font-size: 20px; /* Etwas größer */
-            font-weight: 500;
-            padding: 10px 0;
-            padding-left: 35px;
-            position: relative;
-        }
-        .solution-list li::before {
-            content: "→"; /* Pfeil statt Icon */
-            position: absolute;
-            left: 0;
-            top: 11px;
-            font-size: 24px;
-            color: var(--color-secondary);
-        }
-
-
-        /* --- KORREKTUR für deine Problem-Liste (war vorher schon da) --- */
-        .problem-list li::before {
-            content: "✓"; /* Claude's Vorschlag mit Haken */
-            color: var(--color-primary);
-        }
-
-    </style>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2JRKPT8TY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -140,59 +24,48 @@
 
     <header class="header">
         <a href="https://www.jnp-coach.com" target="_blank">
-            <img src="logo-unterschrift.png" alt="Logo von Jacqueline Näther-Piatraschk">
+            <img src="https://sos-bauchfett-bundle.jnp-coach.com/logo-unterschrift.png" alt="Logo von Jacqueline Näther-Piatraschk">
         </a>
     </header>
 
     <main>
-        <section class="section hero">
-            <div class="container">
-                <div class="hero-image">
-                    <img src="foto-hero.jpg" alt="Jacqueline Näther-Piatraschk">
+        <section class="section hero" style="padding-top: 50px; padding-bottom: 50px;">
+            <div class="container hero-split">
+                <div class="hero-image-full">
+                    <img src="https://sos-bauchfett-bundle.jnp-coach.com/foto-about.jpg" alt="Jacqueline Näther-Piatraschk mit frischem Gemüse">
                 </div>
-                <div class="hero-text">
-    <h1>Schluss mit dem Bauchfett-Frust!</h1>
-    <p class="subline">Die Waage steigt, obwohl Du nichts anders machst?</p> 
-
-    <p style="font-size: 20px; font-weight: 500; color: var(--color-primary); margin-bottom: 30px;">
-        Verstehe endlich WARUM - und was wirklich hilft.<br>
-        Deine kostenlose Superfood-Checkliste für die Wechseljahre.
-    </p>
-
-    <a href="#zum-formular" class="cta-button">Ja, ich will verstehen was los ist!</a> 
-
-    </div>
-                        
-                        <button type="submit" class="cta-button">Ja, ich will verstehen was los ist!</button>
-                        <p class="privacy-note">100% kostenlos & 0% Spam.</p>
-                    </form>
+                <div class="hero-text-right">
+                    <h1>Schluss mit dem Bauchfett-Frust!</h1>
+                    <p class="subline">Die Waage steigt, obwohl Du nichts anders machst?</p>
+                    <p style="font-size: 20px; font-weight: 500; color: var(--color-primary); margin-bottom: 30px;">
+                        Verstehe endlich WARUM - und was wirklich hilft.<br>
+                        Deine kostenlose Superfood-Checkliste für die Wechseljahre.
+                    </p>
+                    <a href="#zum-formular" class="cta-button">Ja, ich will verstehen was los ist!</a>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container text-center">
-                 <h2>Kennst Du das auch?</h2>
-                               
+                <h2>Kennst Du das auch?</h2>
                 <ul class="problem-list">
                     <li>Die Jeans kneift, obwohl Du kaum noch was isst</li>
                     <li>Brain Fog im Meeting - und die Angst, nicht mehr mitzukommen</li>
                     <li>Nachts wach, tagsüber erschöpft - und keiner versteht's</li>
                 </ul>
-
-                 <p style="margin-top: 40px; font-size: 20px; font-weight: 500;">Was wäre, wenn ich Dir sage...</p>
-                 <ul class="solution-list">
+                <p style="margin-top: 40px; font-size: 20px; font-weight: 500;">Was wäre, wenn ich Dir sage...</p>
+                <ul class="solution-list">
                     <li>...dass es NICHT an Deiner Willenskraft liegt?</li>
                     <li>...dass Dein DARM mehr mit Deinen Hormonen zu tun hat als Du denkst?</li>
                     <li>...dass die richtigen Lebensmittel Deine heimliche Superpower sind?</li>
-                 </ul>
+                </ul>
             </div>
         </section>
 
         <section class="section what-you-learn">
             <div class="container text-center">
-                 <h2>In meiner Checkliste erfährst Du:</h2>
-               
+                <h2>In meiner Checkliste erfährst Du:</h2>
                 <ul class="learn-list">
                     <li><b>Den wahren Grund</b> für hartnäckiges Bauchfett (Spoiler: Östrobolom!)</li>
                     <li>Welche Lebensmittel Deine <b>Hormone ins Gleichgewicht</b> bringen</li>
@@ -204,10 +77,10 @@
         <section class="section about">
             <div class="about-content-fullwidth">
                 <div class="about-image-full">
-                    <img src="foto-about.jpg" alt="Jacqueline Näther-Piatraschk mit einer Kiste voller Gemüse">
+                     <img src="https://sos-bauchfett-bundle.jnp-coach.com/foto-about.jpg" alt="Jacqueline Näther-Piatraschk mit einer Kiste voller Gemüse">
                 </div>
                 <div class="about-text-full">
-                     <h2>Hi, ich bin Jacqueline.</h2>
+                    <h2>Hi, ich bin Jacqueline.</h2>
                     <p>52 Jahre, mitten drin im Hormon-Chaos. Ernährungsberaterin aus Leidenschaft.</p>
                     <p>Ich weiß, wie es sich anfühlt, wenn der eigene Körper plötzlich macht, was er will.</p>
                     <p>Diese Checkliste? Das ist das Wissen, das ich mir damals gewünscht hätte. Kein Diät-Blabla. Sondern Klartext, der hilft.</p>
@@ -216,21 +89,25 @@
             </div>
         </section>
 
-        <section class="section final-cta text-center">
-             <h2>Hol Dir jetzt Deine kostenlose Checkliste!</h2>
-             <p style="font-size:20px;max-width:600px;margin:0 auto 20px">Hör auf zu rätseln und fange an zu verstehen.</p>
+        <section id="zum-formular" class="section final-cta text-center">
+            <h2>Hol Dir jetzt Deine kostenlose Checkliste!</h2>
+            <p style="font-size:20px;max-width:600px;margin:0 auto 20px">Hör auf zu rätseln und fange an zu verstehen.</p>
             
-             <div class="container" style="max-width: 600px;">
-                 <form class="optin-form" action="[HIER DEN FORMULAR-CODE VON BREVO EINFÜGEN]" method="POST">
-                        <p class="form-title">Verstehe endlich WARUM - und was wirklich hilft.<br>Deine kostenlose Superfood-Checkliste für die Wechseljahre.</p>
-                        <input type="email" name="EMAIL" placeholder="Deine beste E-Mail-Adresse" required> <div class="checkbox-container">
-                             <input type="checkbox" id="newsletter-consent-2" name="NEWSLETTER_CONSENT"> <label for="newsletter-consent-2">Ja, ich möchte auch Deinen Newsletter mit wertvollen Tipps erhalten (jederzeit abbestellbar).</label>
-                        </div>
-                        
-                        <button type="submit" class="cta-button">Ja, ich will verstehen was los ist!</button>
-                        <p class="privacy-note">100% kostenlos & 0% Spam.</p>
-                    </form>
-             </div>
+            <div class="container" style="max-width: 600px;">
+                <form class="optin-form" action="[HIER DEN FORMULAR-CODE VON BREVO EINFÜGEN]" method="POST" target="_blank"> <p class="form-title">Trag hier Deine E-Mail-Adresse ein und erhalte sofortigen Zugang:</p>
+                    <input type="email" name="EMAIL" placeholder="Deine beste E-Mail-Adresse" required>
+                    
+                    <div class="checkbox-container">
+                       <input type="checkbox" id="datenschutz" name="DATENSCHUTZ" required> <label for="datenschutz">Ich habe die <a href="https://jnp-coach.com/datenschutzerklarung/" target="_blank">Datenschutzerklärung</a> gelesen und stimme zu.</label>
+                   </div>
+                   
+                   <div class="checkbox-container">
+                         <input type="checkbox" id="newsletter-consent" name="NEWSLETTER_CONSENT" checked> <label for="newsletter-consent">Ja, ich möchte auch Deinen Newsletter mit wertvollen Tipps erhalten (jederzeit abbestellbar).</label>
+                   </div>
+
+                    <button type="submit" class="cta-button">Checkliste kostenlos anfordern!</button> <p class="privacy-note">100% kostenlos & 0% Spam. Du kannst Dich jederzeit abmelden.</p>
+                </form>
+            </div>
         </section>
     </main>
 
