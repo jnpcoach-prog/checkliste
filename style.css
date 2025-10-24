@@ -124,26 +124,33 @@ p { font-size: 18px; }
 }
 
 /* --- Problem Section --- */
-.problem-list {
-    list-style: none;
-    padding: 0;
-    margin: 40px auto;
-    display: inline-block;
-    text-align: left;
-    max-width: 500px; 
+.problem-list li, 
+.solution-list li,
+.learn-list li { /* Gilt jetzt für alle 3 Listen */
+    background-color: #ffffff; /* Weißer Hintergrund als Basis */
+    padding-top: 15px; /* Etwas mehr Innenabstand oben/unten */
+    padding-bottom: 15px;
+    padding-right: 15px; /* Auch rechts etwas Abstand */
+    border-radius: 8px; /* Abgerundete Ecken */
+    margin-bottom: 15px; /* Mehr Abstand zwischen den Punkten */
+    border-left: 4px solid var(--color-secondary); /* Linker Farbakzent */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Dezenter Schatten */
+    transition: all 0.3s ease; /* Übergang für Hover */
 }
-.problem-list li {
-    font-size: 18px;
-    padding: 12px 0;
-    padding-left: 35px;
-    position: relative;
+
+.problem-list li:hover, 
+.solution-list li:hover,
+.learn-list li:hover {
+    transform: translateY(-2px) scale(1.01); /* Leichter Schwebe-Effekt */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Etwas stärkerer Schatten */
+    background-color: var(--color-bg-light); /* Leichte Hintergrundfärbung */
 }
-.problem-list li::before {
-    content: "✅"; 
-    position: absolute;
-    left: 0;
-    top: 13px;
-    font-size: 20px;
+
+/* Ggf. Icons/Pfeile anpassen, falls sie durch Padding verschoben sind */
+.problem-list li::before, 
+.solution-list li::before,
+.learn-list li::before {
+    top: 18px; /* Ggf. leicht anpassen */
 }
 
 /* --- NEU: Top Testimonial Section --- */
