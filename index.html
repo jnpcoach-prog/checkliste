@@ -29,22 +29,45 @@
     </header>
 
     <main>
-        <section class="section hero" style="padding-top: 50px; padding-bottom: 50px;">
-            <div class="container hero-split"> 
-                <div class="hero-image-full">
-                    <img src="https://sos-bauchfett-bundle.jnp-coach.com/foto-about.jpg" alt="Jacqueline Näther-Piatraschk mit frischem Gemüse">
-                </div>
-                <div class="hero-text-right">
-                    <h1>Schluss mit dem Bauchfett-Frust!</h1>
-                    <p class="subline">Die Waage steigt, obwohl Du nichts anders machst?</p> 
-                    <p style="font-size: 20px; font-weight: 500; color: var(--color-primary); margin-bottom: 30px;">
-                        Verstehe endlich WARUM - und was wirklich hilft.<br>
-                        Deine kostenlose Superfood-Checkliste für die Wechseljahre.
-                    </p>
-                    <a href="#zum-formular" class="cta-button">Ja, ich will verstehen was los ist!</a> 
-                </div>
-            </div>
-        </section>
+        <section class="section hero" style="background-color: var(--color-bg-light); padding-top: 50px; padding-bottom: 50px;"> <div class="container text-center"> <span class="hero-badge" style="background-color: var(--color-secondary); color: white;">Kostenlos • Wissenschaftlich fundiert</span>
+        
+        <h1 style="color: var(--color-primary); background: none; -webkit-background-clip: unset; -webkit-text-fill-color: unset; background-clip: unset;">Schluss mit dem Bauchfett-Frust!</h1> <p class="subtitle" style="color: var(--color-text);"> Die Waage steigt, obwohl du nichts anders machst?
+        </p>
+        
+        <p class="intro-text" style="color: var(--color-text); max-width: 650px;"> Verstehe endlich <strong style="color: var(--color-primary); font-weight: 600;">WARUM</strong> dein Körper in den Wechseljahren 
+            plötzlich nach neuen Regeln spielt – und entdecke die <strong style="color: var(--color-primary); font-weight: 600;">Superfoods</strong>, 
+            die deine Hormone sanft ins Gleichgewicht bringen.
+        </p>
+        
+        <div id="zum-formular" class="form-wrapper" style="background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); padding: 35px; max-width: 500px; margin: 40px auto 0;">
+             <p class="form-title" style="font-size: 18px; color: var(--color-primary); margin-bottom: 20px; font-weight: 600;">Hol dir deine kostenlose Checkliste:</p>
+             <form action="[HIER DEN FORMULAR-CODE VON BREVO EINFÜGEN]" method="POST" target="_blank">
+                <input type="email" 
+                       class="email-input" 
+                       name="EMAIL" /* Name Attribut hinzugefügt */
+                       placeholder="Deine E-Mail-Adresse" 
+                       required 
+                       style="width: 100%; padding: 15px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 20px; box-sizing: border-box; font-family: 'Montserrat', sans-serif;">
+                
+                <div class="checkbox-container" style="margin-top: 15px; margin-bottom: 20px; text-align: left; font-size: 14px; color: #555; display: flex; align-items: flex-start;">
+                   <input type="checkbox" id="datenschutz" name="DATENSCHUTZ" required style="margin-right: 10px; margin-top: 3px; flex-shrink: 0;">
+                   <label for="datenschutz" style="line-height: 1.5;">Ich habe die <a href="https://jnp-coach.com/datenschutzerklarung/" target="_blank">Datenschutzerklärung</a> gelesen und stimme zu.</label>
+               </div>
+               
+               <div class="checkbox-container" style="margin-top: 15px; margin-bottom: 20px; text-align: left; font-size: 14px; color: #555; display: flex; align-items: flex-start;">
+                     <input type="checkbox" id="newsletter-consent" name="NEWSLETTER_CONSENT" checked style="margin-right: 10px; margin-top: 3px; flex-shrink: 0;">
+                     <label for="newsletter-consent" style="line-height: 1.5;">Ja, ich möchte auch Deinen Newsletter mit wertvollen Tipps erhalten (jederzeit abbestellbar).</label>
+               </div>
+
+                <button type="submit" class="cta-button"> Ja, ich will verstehen was los ist! 
+                </button>
+            </form>
+            <p class="privacy-note" style="font-size: 13px; color: #999; margin-top: 15px; text-align: center;">
+                 100% kostenlos. Kein Spam. Du kannst dich jederzeit abmelden.
+            </p>
+        </div>
+    </div>
+</section>
 
         <section class="section pain-points" style="background-color: var(--color-bg-light); padding-top: 60px; padding-bottom: 60px;">
              <div class="container text-center">
