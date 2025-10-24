@@ -204,9 +204,12 @@ p { font-size: 18px; }
 }
 .journey-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;  /* ÄNDERUNG: Zwingt die Boxen in eine Spalte */
+    gap: 20px;                  /* ÄNDERUNG: Etwas weniger Abstand für Stapel-Optik */
     margin-top: 50px;
+    max-width: 750px;           /* NEU: Zentriert und begrenzt die Breite (wie bei den Problem-Boxen) */
+    margin-left: auto;          /* NEU: Zentriert */
+    margin-right: auto;         /* NEU: Zentriert */
 }
 .journey-card {
 /* ... (Code bleibt) ... */
