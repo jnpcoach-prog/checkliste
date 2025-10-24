@@ -200,22 +200,62 @@ p { font-size: 18px; }
 /* --- What You Get Section --- */
 .what-you-get { background-color: var(--color-bg-light); }
 .sub-headline {
-/* ... (Code bleibt) ... */
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-top: -30px;
+    margin-bottom: 50px;
+    text-align: center;
 }
+
+/* KORREKTUR: 
+  Dieser Block stapelt die Karten (1fr = eine Spalte)
+  und zentriert sie (max-width + margin: auto)
+*/
 .journey-cards {
     display: grid;
-    grid-template-columns: 1fr;  /* ÄNDERUNG: Zwingt die Boxen in eine Spalte */
-    gap: 20px;                  /* ÄNDERUNG: Etwas weniger Abstand für Stapel-Optik */
+    grid-template-columns: 1fr;  /* Zwingt die Boxen in eine Spalte */
+    gap: 20px;                  /* Etwas weniger Abstand für Stapel-Optik */
     margin-top: 50px;
-    max-width: 750px;           /* NEU: Zentriert und begrenzt die Breite (wie bei den Problem-Boxen) */
-    margin-left: auto;          /* NEU: Zentriert */
-    margin-right: auto;         /* NEU: Zentriert */
+    max-width: 750px;           /* Zentriert und begrenzt die Breite (wie bei den Problem-Boxen) */
+    margin-left: auto;          /* Zentriert */
+    margin-right: auto;         /* Zentriert */
 }
+
+/* KORREKTUR: 
+  Diese Regeln (die ich fälschlicherweise löschen ließ) 
+  fügen das Box-Design wieder hinzu.
+*/
 .journey-card {
-/* ... (Code bleibt) ... */
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    border-left: 5px solid var(--color-secondary); 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease; /* Bonus: Gleicher Hover-Effekt wie die Boxen darüber */
 }
-.journey-card h3 { font-size: 22px; color: var(--color-text); margin-bottom: 15px; font-weight: 600; text-align: left; }
-.journey-card p { font-size: 16px; line-height: 1.6; color: #555; text-align: left; }
+
+/* Bonus: Hover-Effekt (wie bei den Problem-Boxen) */
+.journey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.journey-card h3 { 
+    font-size: 22px; 
+    color: var(--color-text); 
+    margin-bottom: 15px; 
+    font-weight: 600; 
+    text-align: left; 
+}
+.journey-card p { 
+    font-size: 16px; 
+    line-height: 1.6; 
+    color: #555; 
+    text-align: left; 
+}
+
+/* WICHTIG: Falls du noch Regeln für .feature-grid oder .feature-item hast, lösche sie. */
 
 /* --- Value Stack --- */
 .value-stack {
