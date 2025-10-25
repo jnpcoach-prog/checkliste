@@ -11,14 +11,9 @@
 
     <link rel="icon" href="https://sos-bauchfett-bundle.jnp-coach.com/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABCD1234EF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-Y2JRKPT8TY');
-</script>
+    <!-- ⚠️ VORHER HIER: direkter GA-Code -> entfernt, damit Analytics erst NACH Einwilligung lädt -->
+    <!-- NICHTS weiter hier einfügen – GA wird dynamisch unten nach Consent geladen. -->
 </head>
 <body>
 
@@ -153,6 +148,93 @@
         </div>
         <p class="copyright">© 2025 Jacqueline Näther-Piatraschk | Alle Rechte vorbehalten.</p>
     </footer>
+
+    <!-- =========================
+         SILKTIDE CONSENT MANAGER
+         ========================= -->
+    <!-- 1) Script laden (CDN) -->
+    <script src="https://cdn.silktide.com/consent-manager/v2/cmp.js" defer></script>
+
+    <!-- 2) Konfiguration + Analytics-Nachladung NACH Zustimmung -->
+    <script>
+      // Hilfsfunktion: Google Analytics dynamisch laden (gtag)
+      function loadGoogleAnalytics(measurementId) {
+        if (window.__gaLoaded) return;           // doppelte Einbindungen vermeiden
+        window.__gaLoaded = true;
+
+        // gtag.js laden
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+        document.head.appendChild(s);
+
+        // gtag initialisieren
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+
+        // Deine Mess-ID hier einsetzen:
+        gtag('config', 'G-ABCD1234EF');
+      }
+
+      // Silktide initialisieren
+      window.addEventListener('load', function () {
+        // Farben an dein Branding angepasst (#004aad / #83a725)
+        window.SilktideConsentManager.init({
+          // Optional: Sprache erzwingen
+          language: 'de',
+          appearance: {
+            theme: 'light',
+            position: 'bottom',       // 'bottom' oder 'top'
+            palette: {
+              banner: { background: '#ffffff', text: '#000000' },
+              buttons: {
+                accept: { background: '#83a725', text: '#ffffff' },
+                reject: { background: '#004aad', text: '#ffffff' }
+              }
+            }
+          },
+          // Cookie-Kategorien definieren
+          cookieTypes: [
+            {
+              key: 'necessary',
+              title: 'Notwendig',
+              description: 'Erforderlich für den Betrieb der Website.',
+              readOnly: true
+            },
+            {
+              key: 'analytics',
+              title: 'Analytics',
+              description: 'Hilft mir zu verstehen, wie die Website genutzt wird.',
+              // WICHTIG: Hier legen wir fest, was bei Zustimmung passiert
+              onAccept: function () {
+                // Google Analytics erst jetzt laden:
+                loadGoogleAnalytics('G-ABCD1234EF'); // <-- Mess-ID später ersetzen
+              },
+              onReject: function () {
+                // Nichts laden – bleibt deaktiviert
+              }
+            }
+          ],
+          // Textinhalte
+          content: {
+            title: 'Cookies & Datenschutz',
+            message: 'Ich verwende Cookies, um meine Website zu verbessern. Du kannst frei wählen, welche Kategorien du zulässt.',
+            acceptAll: 'Alle akzeptieren',
+            rejectAll: 'Alle ablehnen',
+            manage: 'Einstellungen',
+            policy: {
+              text: 'Zur Datenschutzerklärung',
+              url: 'https://jnp-coach.com/datenschutzerklarung/'  // <— ggf. anpassen
+            }
+          }
+        });
+      });
+    </script>
+    <!-- =========================
+         /SILKTIDE CONSENT MANAGER
+         ========================= -->
 
 </body>
 </html>
