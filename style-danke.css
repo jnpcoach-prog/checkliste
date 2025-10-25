@@ -1,1 +1,46 @@
+/* =================================================
+  TEIL 4: NEUE STILE NUR FÜR DANKE-SEITE
+=================================================
+*/
 
+/* Box für die E-Mail-Bestätigung */
+.confirmation-box {
+    background: #fff3cd; /* Ein sanftes Gelb, wie die alte .urgency-box */
+    border-left: 5px solid var(--color-primary); /* Dein Markengrün */
+    padding: 25px 30px;
+    border-radius: 12px;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.confirmation-box h3 {
+    text-align: left;
+    margin-top: 0;
+    font-size: 22px;
+}
+
+/* Trust-Liste mit Häkchen */
+.trust-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto 0;
+    max-width: 450px;
+    text-align: left;
+}
+.trust-list li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 16px; /* Etwas kleiner, wie gewünscht */
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.trust-list li::before {
+    content: '✓'; /* Checkmark */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-secondary); /* Dein helles Grün */
+    font-weight: 700;
+    font-size: 20px;
+}
