@@ -235,6 +235,125 @@
     <!-- =========================
          /SILKTIDE CONSENT MANAGER
          ========================= -->
+<script>
+    // --- Dieser Style-Block erstellt dein Pop-up ---
+    const popupStyles = `
+        #jnp-popup-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 9998;
+        }
+        #jnp-popup-box {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #fff; border-radius: 12px; padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 9999;
+            font-family: 'Montserrat', sans-serif; text-align: center;
+            max-width: 400px; width: 90%; box-sizing: border-box;
+        }
+        #jnp-popup-box h3 {
+            /* Dein Blau als Akzentfarbe */
+            color: #004aad; 
+            margin-top: 0; font-size: 1.5rem;
+        }
+        #jnp-popup-box p {
+            font-size: 1rem; line-height: 1.6;
+        }
+        #jnp-popup-box button {
+            background: #004aad; /* Dein Blau */
+            color: white; border: none; padding: 12px 24px;
+            border-radius: 50px; font-weight: 600; cursor: pointer;
+            font-family: 'Montserrat', sans-serif; margin-top: 15px;
+            font-size: 1rem;
+        }
+    `;
 
+    // --- Diese Funktion zeigt das Pop-up an ---
+    function showSuccessPopup() {
+        // Style zum Head hinzufügen
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = popupStyles;
+        document.head.appendChild(styleSheet);
+
+        // Pop-up-Elemente erstellen
+        const overlay = document.createElement('div');
+        overlay.id = 'jnp-popup-overlay';
+        
+        const popup = document.createElement('div');
+        popup.id = 'jnp-popup-box';
+        
+        popup.innerHTML = `
+            <h3>Fast geschafft!</h3>
+            <p>Deine E-Mail ist unterwegs zu dir.</p>
+            <p>Bitte schaue in dein Postfach (und ggf. in den Spam-Ordner).</p>
+            <button id="jnp-popup-close">Schließen</button>
+        `;
+        
+        document.body.appendChild(overlay);
+        document.body.appendChild(popup);
+
+        // Pop-up schließbar machen
+        document.getElementById('jnp-popup-close').addEventListener('click', () => {
+            document.body.removeChild(overlay);
+            document.body.removeChild(popup);
+            
+            // Setzt alle Formulare auf der Seite zurück
+            allForms.forEach(f => {
+                f.reset(); // Leert das E-Mail-Feld
+                const btn = f.querySelector('button[type="submit"]');
+                btn.innerHTML = "Checkliste kostenlos herunterladen";
+                btn.disabled = false;
+            });
+        });
+    }
+
+    // --- Dieser Teil fängt BEIDE Formulare ab (oben und unten) ---
+    const allForms = document.querySelectorAll('form[action="https://checkliste-backend.onrender.com/api/subscribe-form"]');
+
+    allForms.forEach(form => {
+        form.addEventListener('submit', function(event) {
+            // 1. Verhindert den "schwarzen Bildschirm" (den Redirect)
+            event.preventDefault();
+
+            const button = this.querySelector('button[type="submit"]');
+            button.innerHTML = "Wird gesendet...";
+            button.disabled = true;
+
+            // 2. Schickt die Daten "still" im Hintergrund an Render
+            fetch(this.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(new FormData(this))
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Server-Antwort war nicht OK');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // 3. ERFOLG! Zeigt dein gewünschtes Pop-up an.
+                showSuccessPopup();
+            })
+            .catch(error => {
+                console.error('Formular-Fehler:', error);
+                alert('Ups, da ist etwas schiefgelaufen. Bitte lade die Seite neu und versuche es noch einmal.');
+                // Button zurücksetzen
+                button.innerHTML = "Checkliste kostenlos herunterladen";
+                button.disabled = false;
+            });
+        });
+    });
+</script>
+</body> ```
+
+**Was dieser Code tut:**
+
+1.  Er sucht nach *beiden* Anmeldeformularen auf deiner Seite (das obere und das untere).
+2.  Wenn jemand auf "Checkliste kostenlos herunterladen" klickt, **verhindert** er das Neuladen der Seite (kein schwarzer Bildschirm).
+3.  Er ändert den Button-Text zu "Wird gesendet...".
+4.  Er schickt die E-Mail-Adresse "still" im Hintergrund an deinen Render-Server.
+5.  Sobald das Signal gesendet wurde (egal wie lange Render zum Aufwachen braucht), zeigt er **sofort** dein gewünschtes Pop-up an: "Fast geschafft! Deine E-Mail ist unterwegs zu dir."
 </body>
 </html>
